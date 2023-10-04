@@ -1,6 +1,7 @@
 # Task
 # Imports
 from simpleai.search import CspProblem, backtrack
+import streamlit as st
 
 # Function to parse the cryptarithmetic puzzle input and extract unique characters
 def parse_puzzle(puzzle):
@@ -76,6 +77,7 @@ def solve_puzzle(puzzle):
     return solution
 
 # Program
-puzzle_input = input("Enter the cryptarithmetic puzzle (e.g., 'TO + GO = OUT'): ").upper()
+st.title('AI Course: Task 1')
+puzzle_input = st.text_input("Enter the cryptarithmetic puzzle (e.g., 'TO + GO = OUT'): ").upper()
 solution = solve_puzzle(puzzle_input)
-print('\nSolutions:', solution)
+st.write('\nSolutions:', solution)
