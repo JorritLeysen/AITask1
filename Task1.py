@@ -82,5 +82,5 @@ puzzle_input = st.text_input("Enter the cryptarithmetic puzzle (e.g., 'TO + GO =
 solution = solve_puzzle(puzzle_input)
 
 for key, value in solution.items():
-    print(key, ":", value)
+    st.write(key, ":", value)
 st.write('\nSolutions:', solution)
