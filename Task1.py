@@ -1,7 +1,6 @@
 # Task
 # Imports
-# from simpleai.search import CspProblem, backtrack
-import simpleai
+from simpleai.search import CspProblem, backtrack
 
 # Function to parse the cryptarithmetic puzzle input and extract unique characters
 def parse_puzzle(puzzle):
