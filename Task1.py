@@ -91,5 +91,3 @@ if st.button("Solve"):
                 st.write(f"{variable}: {value}")
         else:
             st.error("No solution found.")
-            
-st.write('\nSolutions:', solution)
