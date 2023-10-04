@@ -97,11 +97,17 @@ if st.button("Solve"):
             st.text('-' * max(len(equation), len(result)))  # Separator line
             st.text(result)
 
+            output1 = ""
+            output2 = ""
+
             for letter in equation:
-                st.text(solution[letter])
-            st.text('-' * max(len(equation), len(result)))  # Separator line
+                output1 += str(solution[letter])
             for letter in result:
-                st.text(solution[letter])
+                output2 += str(solution[letter])
+
+            st.text(output1)
+            st.text('-' * max(len(equation), len(result)))  # Separator line
+            st.text(output2)
             
             for variable, value in solution.items():
                 st.write(f"{variable}: {value}")
