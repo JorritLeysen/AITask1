@@ -80,4 +80,7 @@ def solve_puzzle(puzzle):
 st.title('AI Course: Task 1')
 puzzle_input = st.text_input("Enter the cryptarithmetic puzzle (e.g., 'TO + GO = OUT'): ").upper()
 solution = solve_puzzle(puzzle_input)
+
+for letter in solution:
+    st.write(solution[letter])
 st.write('\nSolutions:', solution)
