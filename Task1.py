@@ -79,8 +79,17 @@ def solve_puzzle(puzzle):
 # Program
 st.title('AI Course: Task 1')
 puzzle_input = st.text_input("Enter the cryptarithmetic puzzle (e.g., 'TO + GO = OUT'): ").upper()
-solution = solve_puzzle(puzzle_input)
 
-for key, value in solution.items():
-    st.write(key, ":", value)
+if st.button("Solve"):
+    if not puzzle_input:
+        st.error("Please enter a cryptarithmetic puzzle.")
+    else:
+        solution = solve_puzzle(puzzle_input)
+        if solution is not None:
+            st.success("Solution:")
+            for variable, value in solution.items():
+                st.write(f"{variable}: {value}")
+        else:
+            st.error("No solution found.")
+            
 st.write('\nSolutions:', solution)
