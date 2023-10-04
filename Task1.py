@@ -87,6 +87,16 @@ if st.button("Solve"):
         solution = solve_puzzle(puzzle_input)
         if solution is not None:
             st.success("Solution:")
+            # Split the puzzle into the equation and solution
+            equation, result = puzzle_input.split('=')
+            equation = equation.strip()
+            result = result.strip()
+
+            # Display the formatted puzzle and solution
+            st.text(equation)
+            st.text(result)
+            st.text('-' * max(len(equation), len(result)))  # Separator line
+            st.text(solution)  # Display the solution
             for variable, value in solution.items():
                 st.write(f"{variable}: {value}")
         else:
