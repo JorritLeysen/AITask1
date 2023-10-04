@@ -94,9 +94,15 @@ if st.button("Solve"):
 
             # Display the formatted puzzle and solution
             st.text(equation)
-            st.text(result)
             st.text('-' * max(len(equation), len(result)))  # Separator line
-            st.text(solution)  # Display the solution
+            st.text(result)
+
+            for letter in equation:
+                st.text(solution[solution.index(letter)])
+            st.text('-' * max(len(equation), len(result)))  # Separator line
+            for letter in result:
+                st.text(solution[solution.index(letter)])
+            
             for variable, value in solution.items():
                 st.write(f"{variable}: {value}")
         else:
