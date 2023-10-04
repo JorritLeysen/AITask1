@@ -101,9 +101,15 @@ if st.button("Solve"):
             output2 = ""
 
             for letter in equation:
-                output1 += str(solution[letter])
+                if letter in solution:
+                    output1 += str(solution[letter])
+                else:
+                    output1 += letter
             for letter in result:
-                output2 += str(solution[letter])
+                if letter in solution:
+                    output2 += str(solution[letter])
+                else:
+                    output2 += letter
 
             st.text(output1)
             st.text('-' * max(len(equation), len(result)))  # Separator line
