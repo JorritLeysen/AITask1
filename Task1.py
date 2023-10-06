@@ -12,11 +12,6 @@ def parse_puzzle(puzzle):
 def constraint_unique(variables, values):
     return len(values) == len(set(values))  # remove repeated values and count
 
-# def constraint_add(variables, values):
-#     factor = int(str(values[0]) + str(values[1]) + str(values[1]))
-#     result = int(str(values[3]) + str(values[2]) + str(values[3]) + str(values[4]))
-#     return (factor + factor) == result
-
 # Function to generate the constraints based on the puzzle
 def generate_constraints(puzzle):
     unique_chars = parse_puzzle(puzzle)
@@ -114,6 +109,8 @@ if st.button("Solve"):
             st.text(output1)
             st.text('-' * max(len(equation), len(result)))  # Separator line
             st.text(output2)
+
+            st.text()
             
             for variable, value in solution.items():
                 st.write(f"{variable}: {value}")
